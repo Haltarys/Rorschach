@@ -2,10 +2,10 @@
 static final int SIDE = 800;
 
 // FrameRate
-static final int FR = 40;
+static final int FR = 60;
 
 // Number of blots (twice as many will appear on screen)
-static final int NB_BLOTS = 20;
+static final int NB_BLOTS = 32;
 
 // Min and max radius size of blots
 static final int RADIUS_MIN = 60;
