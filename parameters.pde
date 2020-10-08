@@ -11,6 +11,9 @@ static final int NB_BLOTS = 24;
 static final int RADIUS_MIN = 70;
 static final int RADIUS_MAX = 100;
 
+// Draw mirror or not
+static final boolean DRAW_MIRROR = true;
+
 // Maximum speed for each blot
 static final float MAX_SPEED = 1;
 
