@@ -1,7 +1,7 @@
 // Window size in pixel
 static final int SIDE = 800;
 
-// FrameRate
+// Frame rate
 static final int FR = 60;
 
 // Number of blots (twice as many will appear on screen)
