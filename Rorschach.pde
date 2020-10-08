@@ -1,7 +1,12 @@
 // Processing default function
 void settings() {
-    size(SIDE, SIDE);
-    // size(SIDE, SIDE, P2D);
+    String os = System.getProperty("os.name");
+
+    if (os.contains("Windows")) {
+        size(SIDE, SIDE, P2D);
+    } else {
+        size(SIDE, SIDE);
+    }
 }
 
 // Processing default function
