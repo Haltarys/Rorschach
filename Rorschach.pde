@@ -24,6 +24,14 @@ void draw() {
     for (int i = 0; i < NB_BLOTS; i++)
         inkBlots[i].draw();
     filter(THRESHOLD, THRES);
+
+    if (GIF_IS_RECORDING) {
+        if (counter >= GIF_FRAMES) {
+            exit();
+        }
+        saveFrame("frames/frame-####.jpg");
+        counter++;
+    }
 }
 
 void generateBlots() {
@@ -32,3 +40,4 @@ void generateBlots() {
 }
 
 InkBlot[] inkBlots = new InkBlot[NB_BLOTS];
+int counter = 0;
