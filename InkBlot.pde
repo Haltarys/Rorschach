@@ -4,6 +4,10 @@ class InkBlot {
     private int _radius;
     private float _xspeed;
     private float _yspeed;
+    private float _xtime;
+    private float _ytime;
+    private float _xdir;
+    private float _ydir;
     private PImage _img;
 
     public InkBlot () {
@@ -15,8 +19,16 @@ class InkBlot {
         _y = random(_radius, height - _radius);
 
         // set random speed
-        _xspeed = random(- MAX_SPEED, MAX_SPEED);
-        _yspeed = random(- MAX_SPEED, MAX_SPEED);
+        _xspeed = random(MAX_SPEED);
+        _yspeed = random(MAX_SPEED);
+
+        // set random direction
+        _xdir = random(1) < 0.5? -1 : 1;
+        _ydir = random(1) < 0.5? -1 : 1;
+
+        // start at random point on sine wave for speed boost
+        _xtime = random(START_TIME);
+        _ytime = random(START_TIME);
 
         // generate blot
         generateImage();
@@ -42,19 +54,40 @@ class InkBlot {
         }
     }
 
+    private float speedBoost(float x) {
+        // Creates a curve that looks like: ____/\____/\____
+        float boost = pow(sin(x * SPIKES_FREQUENCY), SPIKES_DURATION) * SPIKES_INTENSITY;
+
+        return boost;
+    }
+
     private void bounce() {
-        if (_x < _radius || _x >= width - _radius)
-            _xspeed *= -1;
-        if (_y < _radius || _y >= height - _radius)
-            _yspeed *= -1;
+        if (_x < _radius) {
+            _x = _radius;
+            _xdir *= -1;
+        } else if (_x >= width - _radius) {
+            _x = width - _radius - 1;
+            _xdir *= -1;
+        }
+
+        if (_y < _radius) {
+            _y = _radius;
+            _ydir *= -1;
+        } else if (_y >= height - _radius) {
+            _y = height - _radius - 1;
+            _ydir *= -1;
+        }
     }
 
     public void move() {
+        // move by an amount + an extra amount for acceleration
+        _x += (_xspeed + speedBoost(_xtime)) * _xdir;
+        _y += (_yspeed + speedBoost(_ytime)) * _ydir;
+        _xtime += DELTA;
+        _ytime += DELTA;
+
         // bounce off edges
         bounce();
-
-        _x += _xspeed;
-        _y += _yspeed;
     }
 
     public void draw() {
