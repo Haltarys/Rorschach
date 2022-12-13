@@ -12,7 +12,7 @@ static final int RADIUS_MIN = 60;
 static final int RADIUS_MAX = 90;
 
 // Maximum speed for each blot
-static final float SPEED = 1;
+static final float MAX_SPEED = 1;
 
 // Brightness threshold for "merging" the ink blots
 // 0: no merge, 1: full merge

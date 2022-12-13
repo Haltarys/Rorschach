@@ -15,8 +15,8 @@ class InkBlot {
         _y = random(_radius, height - _radius);
 
         // set random speed
-        _xspeed = random(- SPEED, SPEED);
-        _yspeed = random(- SPEED, SPEED);
+        _xspeed = random(- MAX_SPEED, MAX_SPEED);
+        _yspeed = random(- MAX_SPEED, MAX_SPEED);
 
         // generate blot
         generateImage();
