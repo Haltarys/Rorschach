@@ -11,8 +11,8 @@ class InkBlot {
         _radius = (int) random(RADIUS_MIN, RADIUS_MAX);
 
         // set coordinates with left half of the window
-        _x = random(_radius, SIDE - _radius);
-        _y = random(_radius, SIDE - _radius);
+        _x = random(_radius, width - _radius);
+        _y = random(_radius, height - _radius);
 
         // set random speed
         _xspeed = random(- SPEED, SPEED);
@@ -43,9 +43,9 @@ class InkBlot {
     }
 
     private void bounce() {
-        if (_x < _radius || _x >= SIDE - _radius)
+        if (_x < _radius || _x >= width - _radius)
             _xspeed *= -1;
-        if (_y < _radius || _y >= SIDE - _radius)
+        if (_y < _radius || _y >= height - _radius)
             _yspeed *= -1;
     }
 
@@ -60,6 +60,6 @@ class InkBlot {
     public void draw() {
         // draw image and its mirror
         image(_img, _x - _radius, _y - _radius, _radius * 2, _radius * 2);
-        image(_img, SIDE - _x - 1 - _radius, _y - _radius, _radius * 2, _radius * 2);
+        image(_img, width - _x - 1 - _radius, _y - _radius, _radius * 2, _radius * 2);
     }
 }
