@@ -60,6 +60,8 @@ class InkBlot {
     public void draw() {
         // draw image and its mirror
         image(_img, _x - _radius, _y - _radius, _radius * 2, _radius * 2);
-        image(_img, width - _x - 1 - _radius, _y - _radius, _radius * 2, _radius * 2);
+
+        if (DRAW_MIRROR)
+            image(_img, width - _x - 1 - _radius, _y - _radius, _radius * 2, _radius * 2);
     }
 }
