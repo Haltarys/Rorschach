@@ -63,8 +63,7 @@ static final private float DELTA = 0.01;
 ////////////////////////////////////////
 
 // Number of frames for the GIF image
-static final float GIF_FRAMES = 600;
-static final float GIF_DURATION = 1;
+static final float GIF_FRAMES = 1000;
 static final boolean GIF_IS_RECORDING = true;
 
 ////////////////////////////////////////

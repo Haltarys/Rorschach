@@ -31,6 +31,7 @@ void draw() {
         }
         saveFrame("frames/frame-####.jpg");
         counter++;
+        println(counter + "/" + (int)GIF_FRAMES);
     }
 }
 
