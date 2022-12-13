@@ -1,11 +1,12 @@
 // Processing default function
 void settings() {
     size(SIDE, SIDE);
-    // frameRate(FR);
+    // size(SIDE, SIDE, P2D);
 }
 
 // Processing default function
 void setup() {
+    frameRate(FR);
     generateBlots();
 }
 

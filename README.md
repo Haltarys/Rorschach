@@ -6,6 +6,14 @@ Procedurally generated Rorschach-like image animated in real time using the Proc
 
 When in the root directory, run:
 
+### Linux
+
 ```bash
 processing-java --sketch=`pwd` --run
+```
+
+### Windows
+
+```powershell
+processing-java --sketch="$(pwd)" --run
 ```
