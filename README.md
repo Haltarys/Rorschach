@@ -12,6 +12,12 @@ When in the root directory, run:
 processing-java --sketch=`pwd` --run
 ```
 
+Or
+
+```bash
+processing-java --sketch="$(pwd)" --run
+```
+
 ### Windows
 
 ```powershell
