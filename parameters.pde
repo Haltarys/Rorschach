@@ -5,11 +5,11 @@ static final int SIDE = 800;
 static final int FR = 60;
 
 // Number of blots (twice as many will appear on screen)
-static final int NB_BLOTS = 28;
+static final int NB_BLOTS = 24;
 
 // Min and max radius size of blots
-static final int RADIUS_MIN = 60;
-static final int RADIUS_MAX = 90;
+static final int RADIUS_MIN = 70;
+static final int RADIUS_MAX = 100;
 
 // Maximum speed for each blot
 static final float MAX_SPEED = 1;
