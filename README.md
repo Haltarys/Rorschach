@@ -11,12 +11,6 @@ When in the root directory, run:
 ### Linux
 
 ```bash
-processing-java --sketch=`pwd` --run
-```
-
-Or
-
-```bash
 processing-java --sketch="$(pwd)" --run
 ```
 
